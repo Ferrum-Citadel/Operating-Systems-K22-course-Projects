@@ -11,7 +11,7 @@
 
 int main(int argc, char *argv[]){
     int algo, curr_refs = 0;
-    int frames_num, q, max_refs, ws_window;
+    int frames_num, q, max_refs;
     FILE *fp1, *fp2;
     STATS proc1, proc2;
 
@@ -21,13 +21,11 @@ int main(int argc, char *argv[]){
     max_refs = (int)strtol(argv[3], NULL, 10);
 
     //Elegxoyme poios algorithmos dowthike pros xrisi kai diaxeirizomaste ta orismata katallila
-    if((strcmp(argv[4], "LRU") == 0) && argc == 6){
-        ws_window = strtol(argv[5], NULL, 10);
-        algo = 0;
-    // }else if((strcmp(argv[4], "WS") == 0) && argc == 5){  //Trexoume mono ton LRU algorithmo
-    //     algo = 1;
-     }else{
-        printf("Error: The given argumets are wrong, please refer to the README file.\n The programm will now stop...\n");
+    if((strcmp(argv[4], "LRU") == 0) && argc == 5){
+        
+        algo = 1;
+    }else{
+        printf("Error: The given arguments are wrong, please refer to the README file.\n The programm will now stop...\n");
         exit(EXIT_FAILURE);
     }
     //Anoigma twn arxeiwn me ta reference trace
@@ -49,7 +47,7 @@ int main(int argc, char *argv[]){
     curr_refs = 2*q;
     int i=0;
     while(curr_refs <= max_refs){
-        if(algo == 0){
+        if(algo == 1){
             memory_manager_lru(frames_num, q, max_refs, 1, fp1, ipt, age_array, &proc1);      
             memory_manager_lru(frames_num, q, max_refs, 2, fp2, ipt, age_array, &proc2);            
         }
