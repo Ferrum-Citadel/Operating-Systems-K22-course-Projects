@@ -67,26 +67,4 @@ In the following example the low memory frame number given (arg1=100) results in
 -References examined: 2000
 -Frames used at exit: 200
 
-[pitas@Ironcastle Virtual Memory Project]$ ./memory_manager 100 50 2000 LRU
-----------STATISTICS FOR PROCESS: 1
--Page faults: 122
--Reads from disk: 122
--Writes to disk: 69
--References examined: 1000
--Frames used at exit: 100
-
-----------STATISTICS FOR PROCESS: 2:
--Page faults: 312
--Reads from disk: 312
--Writes to disk: 137
--References examined: 1000
--Frames used at exit: 100
-
-----------STATISTICS IN GENERAL
--Page faults: 434
--Reads from disk: 434
--Writes to disk: 206
--References examined: 2000
--Frames used at exit: 200
-
 ```
